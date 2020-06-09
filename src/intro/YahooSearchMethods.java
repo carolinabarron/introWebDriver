@@ -16,10 +16,11 @@ public class YahooSearchMethods {
 	static WebDriver driver;
 
 	public static void main(String[] args) {
-		setUp("chrome", "http://www.yahoo.com");
+		System.setProperty("webdriver.chrome.driver", "C:\\libs\\chromedriver.exe");
+		setUp("chrome", "http://www.yahoo.com"); //Setea el browser Chrome y abre url
 
-		searchYahoo("Selenium");
-		
+		searchYahoo("Selenium"); //Busca "Selenium"
+
 		clickLink("Selenium - Web Browser Automation");
 
 		selectPopUp();
@@ -41,6 +42,7 @@ public class YahooSearchMethods {
 	}
 
 	private static void clickLink(String linkText) {
+		//WebElement link = driver.findElement(By.linkText(linkText));
 		WebElement link = driver.findElement(By.linkText(linkText));
 		link.click();
 		
@@ -48,8 +50,8 @@ public class YahooSearchMethods {
 
 	private static void searchYahoo(String topic) {
 		//busqueda
-		WebElement searchBox = driver.findElement(By.id("uh-search-box"));
-		WebElement searchButton = driver.findElement(By.id("uh-search-button"));
+		WebElement searchBox = driver.findElement(By.id("header-search-input"));
+		WebElement searchButton = driver.findElement(By.id("header-desktop-search-button"));
 
 		searchBox.clear();
 		searchBox.sendKeys(topic);

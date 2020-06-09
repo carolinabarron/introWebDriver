@@ -15,11 +15,12 @@ public class YahooSearchMain {
 
 	public static void main(String[] args) {
 		//INICIALIZACION DE SYSTEM.SETPROPERTY()
-	    WebDriver driver;
+		System.setProperty("webdriver.chrome.driver", "C:\\libs\\chromedriver.exe");
+	    WebDriver driver; //Arranca el navegador (Chrome)
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30,  TimeUnit.SECONDS);
-		driver.get("http://www.yahoo.com");
-		WebElement searchBox = driver.findElement(By.id("uh-search-box"));
+		driver.manage().timeouts().implicitlyWait(30,  TimeUnit.SECONDS); //Espera
+		driver.get("http://www.yahoo.com"); //Navega a la URL
+		WebElement searchBox = driver.findElement(By.id("uh-search-box")); //Variable searchbox y la asigna o apunta a un web element
 		WebElement searchButton = driver.findElement(By.id("uh-search-button"));
 		
 		searchBox.clear();
