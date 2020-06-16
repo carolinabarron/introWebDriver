@@ -1,6 +1,5 @@
-
 package classExercise;
-public class TelcelSeleccionarArticulo extends TelcelParent{
+public class TelcelSeleccionarArticulo2 extends TelcelParent2{
 
     //
 
